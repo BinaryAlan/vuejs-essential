@@ -11,6 +11,11 @@
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
+          <li>
+            <router-link to="/users/1/edit">
+              <i class="fa fa-cog text-md i-middle"></i> 编辑资料
+            </router-link>
+          </li>
           <li><a href="#" @click="logout"><i class="fa fa-sign-out text-md"></i>退出</a></li>
         </ul>
       </li>
@@ -31,16 +36,16 @@ import { mapState } from 'vuex'
 export default {
   name: 'TheEntry',
   computed: {
-   ...mapState(['auth','user'])
+    ...mapState(['auth', 'user'])
   },
-  methods:{
-    logout(){
+  methods: {
+    logout() {
       this.$swal({
         text: '你确定退出吗？',
         confirmButtonText: '退出',
-        cancelButtonText:'取消'
-      }).then((res)=>{
-        if(res.value){
+        cancelButtonText: '取消'
+      }).then((res) => {
+        if (res.value) {
           this.$store.dispatch('logout')
         }
       })
