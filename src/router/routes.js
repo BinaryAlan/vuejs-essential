@@ -47,4 +47,24 @@ export default [
       }
     ]
   },
+  {
+    path: '/articles/create',
+    name: 'Create',
+    component:()=>import('@/views/articles/Create'),
+    meta: {
+      auth: true
+    }
+
+  },
+  {
+    path: '/articles/:articleId/content',
+    name: 'Content',
+    component: ()=> import('@/views/articles/Content')
+  },
+  {
+    path: '/articles/:articleId/edit',
+    name: 'Edit',
+    component: () => import('@/views/articles/Create'),
+    meta: { auth: true}
+  }
 ]
