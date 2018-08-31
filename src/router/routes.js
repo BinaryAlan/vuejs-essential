@@ -7,6 +7,7 @@ export default [{
   {
     path: '/',
     name: 'Home',
+    alias: '/topics',
     component: () =>
       import ('@/views/Home')
   },
@@ -69,6 +70,11 @@ export default [{
     component: () =>
       import ('@/views/articles/Create'),
     meta: { auth: true }
+  },
+    {
+    path: '/search',
+    name: 'Search',
+    component: () => import('@/views/Search')
   },
   {
     path: '/:user',
